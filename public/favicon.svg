@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="12" fill="#0F2A2A"/>
+  <!-- Outer circle -->
+  <circle cx="32" cy="32" r="22" stroke="#C8A46D" stroke-width="1.5" fill="none"/>
+  <!-- Cross (compass) -->
+  <line x1="32" y1="12" x2="32" y2="52" stroke="#C8A46D" stroke-width="1.2"/>
+  <line x1="12" y1="32" x2="52" y2="32" stroke="#C8A46D" stroke-width="1.2"/>
+  <!-- Wave curves -->
+  <path d="M16 26 C20 22, 26 22, 32 26 C38 30, 44 30, 48 26" stroke="#C8A46D" stroke-width="1" fill="none"/>
+  <path d="M16 38 C20 34, 26 34, 32 38 C38 42, 44 42, 48 38" stroke="#C8A46D" stroke-width="1" fill="none"/>
+  <!-- Center dot -->
+  <circle cx="32" cy="32" r="2.5" fill="#C8A46D"/>
+</svg>

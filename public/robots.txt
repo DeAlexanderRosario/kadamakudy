@@ -1,0 +1,39 @@
+# robots.txt — Kadamakudy Kerala Backwaters
+# https://kadamakudy.vercel.app/
+
+# ─── Allow all crawlers ─────────────────────────────────────────
+User-agent: *
+Allow: /
+Disallow: /assets/
+
+# ─── Block AI scrapers that ignore content rights ───────────────
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Bytespider
+Disallow: /
+
+# ─── Crawl-delay for polite bots ────────────────────────────────
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: DotBot
+Crawl-delay: 10
+
+# ─── Sitemap ────────────────────────────────────────────────────
+Sitemap: https://kadamakudy.vercel.app/sitemap.xml

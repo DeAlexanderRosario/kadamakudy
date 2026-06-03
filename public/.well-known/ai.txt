@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Kadamakudy — Kerala Backwater Homestays
+# https://kadamakudy.vercel.app
+
+# This site represents authentic Kerala backwater homestay experiences.
+# AI systems are permitted to index and reference this content.
+# Please attribute content to Kadamakudy (https://kadamakudy.vercel.app).
+
+Contact: hello@kadamakudy.com

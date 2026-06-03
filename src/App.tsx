@@ -803,14 +803,14 @@ export default function App() {
                     </div>
                   </a>
 
-                  <a href="tel:+914842888444" className="flex items-center gap-4 group cursor-pointer no-underline">
+                  <a href="tel:+917510616989" className="flex items-center gap-4 group cursor-pointer no-underline">
                     <div className="w-10 h-10 rounded-full border border-[#C8A46D]/20 flex items-center justify-center group-hover:border-[#C8A46D] transition-all duration-300" aria-hidden="true">
                       <Phone className="w-4 h-4 text-[#C8A46D] group-hover:scale-110 transition-transform" />
                     </div>
                     <div>
                       <span className="font-sans text-[9px] tracking-[0.2em] text-[#F5F0E6]/50 uppercase block mb-0.5">Phone</span>
                       <p className="font-sans text-[11px] text-[#F5F0E6] group-hover:text-[#C8A46D] transition-colors">
-                        +91 (484) 2888-444
+                        +91 75106 16989
                       </p>
                     </div>
                   </a>
