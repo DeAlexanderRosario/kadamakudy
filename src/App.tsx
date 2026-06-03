@@ -3,11 +3,11 @@ import { ArrowRight, Circle, Menu, X, Mail, Phone, MapPin, Send, Instagram, Face
 
 const NAV_LINKS = [
   { label: 'THE JOURNEY', href: '#journey' },
-  { label: 'STORIES', href: '#stories' },
-  { label: 'PLACES', href: '#places' },
-  { label: 'EXPERIENCE', href: '#experience' },
-  { label: 'GALLERY', href: '#gallery' },
-  { label: 'JOURNAL', href: '#journal' },
+  { label: 'ABOUT', href: '#about' },
+  { label: 'EXPERIENCES', href: '#experiences' },
+  { label: 'STAYS', href: '#stays' },
+  { label: 'LOCAL LIFE', href: '#locallife' },
+  { label: 'FAQ', href: '#faq' },
   { label: 'CONTACT', href: '#contact' },
 ];
 
@@ -183,6 +183,79 @@ function WaterCanvas() {
   );
 }
 
+function FAQSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const faqs = [
+    {
+      q: "What does Kadamakudy offer travelers?",
+      a: "Kadamakudy offers a peaceful escape near Kochi where you can stay with local families in authentic homestays. You can explore the beautiful backwaters, witness traditional village activities like prawn farming, and enjoy home-cooked Kerala cuisine."
+    },
+    {
+      q: "What should I expect from the homestay accommodations?",
+      a: "Expect warm, clean, and comfortable rooms hosted by welcoming local families. These are real family homes, offering a simple and authentic stay with modern essentials and home-cooked meals."
+    },
+    {
+      q: "How can I get to Kadamakudy?",
+      a: "Kadamakudy is located approximately 15 km from Ernakulam (Kochi) city center. It is easily accessible by road (car or auto-rickshaw) to the island's edge, followed by a short and scenic country boat or canoe ride to the host homes."
+    },
+    {
+      q: "Are the experiences suitable for families?",
+      a: "Yes! Kadamakudy is perfect for families, couples, and solo travelers who appreciate nature, local culture, and a peaceful, slower pace of travel."
+    },
+    {
+      q: "How do I book a stay or visit?",
+      a: "You can send an inquiry using our contact form, email hello@kadamakudy.com, or call us. We conduct a friendly, informal conversation with all prospective guests to ensure we match you with the perfect host family."
+    }
+  ];
+
+  return (
+    <section id="faq" aria-label="Frequently Asked Questions" className="bg-[#0F2A2A] py-24 px-8 lg:px-20 relative overflow-hidden border-t border-[#2B4747]">
+      <div className="max-w-3xl mx-auto relative z-10">
+        <div className="text-center mb-12">
+          <span className="font-sans text-[10px] tracking-[0.3em] text-[#C8A46D] uppercase block mb-3">FAQ</span>
+          <h2 className="font-serif text-4xl font-light text-[#F5F0E6] leading-tight">
+            Frequently Asked Questions
+          </h2>
+          <div className="w-16 h-px bg-[#C8A46D] mx-auto mt-4" aria-hidden="true" />
+        </div>
+
+        <div className="space-y-4">
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+            return (
+              <div
+                key={index}
+                className="border-b border-[#2B4747] pb-4 transition-all duration-300"
+              >
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  className="w-full flex justify-between items-center text-left py-3 focus:outline-none group"
+                >
+                  <span className="font-serif text-lg text-[#F5F0E6] group-hover:text-[#C8A46D] transition-colors duration-300">
+                    {faq.q}
+                  </span>
+                  <span className="text-[#C8A46D] text-xl font-mono leading-none">
+                    {isOpen ? '−' : '+'}
+                  </span>
+                </button>
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[200px] opacity-100 mt-2' : 'max-h-0 opacity-0'
+                    }`}
+                >
+                  <p className="font-sans text-[12px] leading-relaxed text-[#F5F0E6]/70">
+                    {faq.a}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -211,9 +284,8 @@ export default function App() {
       {/* ─── NAVIGATION ─────────────────────────────────────────── */}
       <nav
         aria-label="Main navigation"
-        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 transition-all duration-500 ${
-          scrolled ? 'bg-[#0F2A2A]/90 backdrop-blur-sm border-b border-[#C8A46D]/10' : ''
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 transition-all duration-500 ${scrolled ? 'bg-[#0F2A2A]/90 backdrop-blur-sm border-b border-[#C8A46D]/10' : ''
+          }`}
       >
         {/* Logo */}
         <a href="/" aria-label="Kadamakudy — Kerala Backwaters, go to homepage" className="flex items-center gap-3 no-underline">
@@ -321,26 +393,35 @@ export default function App() {
             <div className="font-mono text-[9px] tracking-[0.25em] text-[#C8A46D] mb-4 uppercase" aria-hidden="true">
               10°03'09.4"N 76°15'25.2"E &bull; CHAPTER I
             </div>
-            {/* ── ONE H1 PER PAGE — Optimized for "Kerala backwater homestay" intent ── */}
-            <h1 className="font-serif text-6xl lg:text-8xl font-light text-[#F5F0E6] leading-[0.95] mb-6 tracking-tight">
-              Not Tourist.<br />
-              <em className="not-italic text-[#C8A46D] font-light">Witness.</em>
+            <h1 className="font-serif text-5xl lg:text-7xl font-light text-[#F5F0E6] leading-[0.95] mb-6 tracking-tight">
+              Discover the Soul of<br />
+              <em className="not-italic text-[#C8A46D] font-light">Kadamakudy</em>
             </h1>
-            <p className="font-sans text-[10px] tracking-[0.25em] text-[#F5F0E6]/70 uppercase leading-relaxed mb-8 max-w-[340px]">
-              Experience an authentic <a href="#experience" className="text-[#C8A46D] hover:underline transition-colors">Kerala backwater homestay</a>.<br />
-              Learn from the local <a href="#stories" className="text-[#C8A46D] hover:underline transition-colors">fishing village Kerala</a>.<br />
-              Discover the <a href="#places" className="text-[#C8A46D] hover:underline transition-colors">Kadamakudy Islands</a>.
+            <p className="font-sans text-[11px] tracking-[0.15em] text-[#F5F0E6]/80 leading-relaxed mb-8 max-w-[480px]">
+              Stay with local families, explore peaceful <a href="#experiences" className="text-[#C8A46D] hover:underline transition-colors">backwaters</a>, and experience the timeless rhythm of Kerala’s <a href="#locallife" className="text-[#C8A46D] hover:underline transition-colors">island life</a> near Kochi.
             </p>
-            <button
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              aria-label="Start your Kadamakudy backwater experience — contact us"
-              className="cta-btn flex items-center gap-3 border border-[#C8A46D]/40 px-6 py-3 hover:border-[#C8A46D] transition-all duration-300 group"
-            >
-              <span className="font-sans text-[10px] tracking-[0.25em] text-[#C8A46D] uppercase">Start Belonging</span>
-              <div className="w-5 h-5 rounded-full border border-[#C8A46D]/40 flex items-center justify-center group-hover:border-[#C8A46D] transition-colors" aria-hidden="true">
-                <ArrowRight className="w-2.5 h-2.5 text-[#C8A46D]" />
-              </div>
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                aria-label="Plan your stay at Kadamakudy — contact us"
+                className="cta-btn flex items-center gap-3 border border-[#C8A46D]/40 px-6 py-3 hover:border-[#C8A46D] transition-all duration-300 group"
+              >
+                <span className="font-sans text-[10px] tracking-[0.25em] text-[#C8A46D] uppercase">Plan Your Stay</span>
+                <div className="w-5 h-5 rounded-full border border-[#C8A46D]/40 flex items-center justify-center group-hover:border-[#C8A46D] transition-colors" aria-hidden="true">
+                  <ArrowRight className="w-2.5 h-2.5 text-[#C8A46D]" />
+                </div>
+              </button>
+              <button
+                onClick={() => document.getElementById('experiences')?.scrollIntoView({ behavior: 'smooth' })}
+                aria-label="Explore experiences in Kadamakudy"
+                className="cta-btn flex items-center gap-3 border border-[#F5F0E6]/20 px-6 py-3 hover:border-[#C8A46D] transition-all duration-300 group"
+              >
+                <span className="font-sans text-[10px] tracking-[0.25em] text-[#F5F0E6]/70 uppercase group-hover:text-[#C8A46D] transition-colors">Explore Experiences</span>
+                <div className="w-5 h-5 rounded-full border border-[#F5F0E6]/20 flex items-center justify-center group-hover:border-[#C8A46D] transition-colors" aria-hidden="true">
+                  <ArrowRight className="w-2.5 h-2.5 text-[#F5F0E6]/70 group-hover:text-[#C8A46D] transition-colors" />
+                </div>
+              </button>
+            </div>
           </div>
 
           <div className="absolute right-12 bottom-20 flex flex-col items-center gap-2" aria-hidden="true">
@@ -356,10 +437,10 @@ export default function App() {
           </div>
         </section>
 
-        {/* ─── EDITORIAL STORY GRID ──────────────────────────────────────── */}
+        {/* ─── EDITORIAL STORY GRID (Experiences) ────────────────────────── */}
         <section
-          id="stories"
-          aria-label="Stories — Kerala backwater life chapters"
+          id="story-grid"
+          aria-label="Experiences — Kerala backwater life chapters"
           className="grid grid-cols-12 gap-1 sm:gap-0 relative z-10 bg-[#0F2A2A]"
         >
           {/* ROW 1 */}
@@ -402,7 +483,7 @@ export default function App() {
               </div>
               <div className="w-8 h-px bg-[#C8A46D] mb-5" aria-hidden="true" />
               <h2 className="font-serif text-[18px] font-light text-[#2b4747] leading-snug italic">
-                The river does not rush.<br />It already knows where<br />it belongs.
+                The peaceful waterways of Kadamakudy invite you to slow down. Glide along the Kochi backwaters in a traditional hand-paddled canoe, surrounded by calm and natural beauty.
               </h2>
             </div>
             <button aria-label="View Chapter: The River — Kerala backwater stories" className="relative z-10 flex items-center gap-2 group mt-4">
@@ -467,7 +548,7 @@ export default function App() {
                 </h2>
                 <div className="w-8 h-px bg-[#C8A46D] mb-4" aria-hidden="true" />
                 <p className="font-serif text-sm font-light text-[#F5F0E6]/70 italic leading-relaxed max-w-[240px]">
-                  Simple lives in a traditional <a href="#stories" className="text-[#C8A46D] hover:underline transition-colors">fishing village Kerala</a>. Timeless backwater rhythms. Stories passed down through <a href="#experience" className="text-[#C8A46D] hover:underline transition-colors">authentic travel Kerala</a>.
+                  Discover the warm hospitality of a traditional <a href="#locallife" className="text-[#C8A46D] hover:underline transition-colors">fishing village Kerala</a>. Connect with local families and experience an <a href="#stays" className="text-[#C8A46D] hover:underline transition-colors">authentic Kerala stay</a>.
                 </p>
               </div>
               <button aria-label="Explore: Life Along the Water in Kadamakudy" className="relative z-10 flex items-center gap-2 group mt-4 w-fit">
@@ -514,7 +595,7 @@ export default function App() {
                 </h2>
                 <div className="w-8 h-px bg-[#C8A46D] mb-4" aria-hidden="true" />
                 <p className="font-sans text-[11px] leading-relaxed text-[#F5F0E6]/60 max-w-[280px]">
-                  Homes that breathe with the <a href="#journey" className="text-[#C8A46D] hover:underline transition-colors">Kerala backwaters</a>. Built by tradition, held by nature. Traditional homes in a serene <a href="#contact" className="text-[#C8A46D] hover:underline transition-colors">Kadamakudy islands</a> community.
+                  Appreciate the architectural beauty of traditional red-tiled <a href="#stays" className="text-[#C8A46D] hover:underline transition-colors">Kerala homestay</a> dwellings that have stood for generations along the shorelines of the Kadamakudy islands.
                 </p>
               </div>
               <button aria-label="Discover Kerala backwater floating architecture and traditional homes" className="relative z-10 flex items-center gap-2 group mt-4 w-fit">
@@ -543,14 +624,14 @@ export default function App() {
               <div className="relative z-10">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="font-sans text-[10px] tracking-[0.2em] text-[#C8A46D]" aria-hidden="true">04</span>
-                  <span className="font-sans text-[9px] tracking-[0.2em] text-[#F5F0E6]/50 uppercase">GLIMMERING COUPLING</span>
+                  <span className="font-sans text-[9px] tracking-[0.2em] text-[#F5F0E6]/50 uppercase">MIRROR OF THE SKY</span>
                 </div>
                 <h2 className="font-serif text-3xl font-light text-[#F5F0E6] leading-tight mb-3">
-                  The Sky &<br />Water
+                  Mirror of the<br />Sky
                 </h2>
                 <div className="w-8 h-px bg-[#C8A46D] mb-4" aria-hidden="true" />
                 <p className="font-sans text-[11px] leading-relaxed text-[#F5F0E6]/60 max-w-[200px]">
-                  Where the sky meets the <a href="#gallery" className="text-[#C8A46D] hover:underline transition-colors">Kochi backwaters</a> reflection, offering a quiet space for <a href="#experience" className="text-[#C8A46D] hover:underline transition-colors">conscious travel</a>.
+                  Witness the beautiful sunrise where the sky paints its reflection on the Vembanad Lake backwaters, creating a serene space for <a href="#about" className="text-[#C8A46D] hover:underline transition-colors">slow travel Kerala</a>.
                 </p>
               </div>
               <button aria-label="Explore the sky and water reflections of Kadamakudy" className="relative z-10 flex items-center gap-2 group mt-4 w-fit">
@@ -580,11 +661,11 @@ export default function App() {
                 <span className="font-sans text-[10px] tracking-[0.2em] text-[#C8A46D]" aria-hidden="true">05</span>
               </div>
               <h2 className="font-serif text-2xl font-light text-[#F5F0E6] leading-tight mb-3">
-                The <a href="#contact" className="text-[#C8A46D] hover:underline">Backwater Experience</a>
+                The <a href="#stays" className="text-[#C8A46D] hover:underline">Backwater Experience</a>
               </h2>
               <div className="w-8 h-px bg-[#C8A46D] mb-4" aria-hidden="true" />
               <p className="font-sans text-[10px] leading-relaxed text-[#F5F0E6]/60 max-w-[190px]">
-                An immersive journey of <a href="#about" className="text-[#C8A46D] hover:underline">responsible travel India</a>. It is a connection you carry long after you leave.
+                Embark on a gentle journey of <a href="#about" className="text-[#C8A46D] hover:underline">responsible travel Kerala</a>. Stay in local family homestays and belong to a landscape of peace and wonder.
               </p>
             </div>
             <button aria-label="Journey on — explore the Kadamakudy backwater experience" className="relative z-10 flex items-center gap-2 group mt-4 w-fit">
@@ -711,65 +792,193 @@ export default function App() {
             />
             <div className="absolute inset-0 bg-[#0F2A2A]/85" aria-hidden="true" />
           </div>
-          <div className="relative z-10 text-center px-8">
-            <blockquote>
-              <p className="font-serif text-xl lg:text-3xl font-light italic text-[#F5F0E6] tracking-wide">
-                "Every river eventually becomes memory."
-              </p>
-            </blockquote>
-            <div className="divider-ornament justify-center mt-4" aria-hidden="true">
-              <Circle className="w-1 h-1 fill-[#C8A46D] text-[#C8A46D]" />
-            </div>
+          <div className="relative z-10 text-center max-w-3xl mx-auto px-4">
+            <p className="font-serif text-2xl lg:text-4xl font-light italic text-[#F5F0E6]">
+              “The backwaters do not ask you to hurry.”
+            </p>
           </div>
         </section>
 
-        {/* ─── ABOUT ────────────────────────────────────────────── */}
-        <section aria-label="About Kadamakudy — our philosophy and ethos" className="bg-[#0F2A2A] py-24 px-8 lg:px-20 relative overflow-hidden">
-          <div className="malayalam-watermark bottom-10 left-12 opacity-[0.02] text-[10rem]" aria-hidden="true">
-            തീരം
-          </div>
-
-          <div className="max-w-4xl mx-auto relative z-10">
+        {/* ─── ABOUT ──────────────────────────────────────────────── */}
+        <section id="about" aria-label="About Kadamakudy" className="bg-[#0F2A2A] py-24 px-8 lg:px-20 relative overflow-hidden border-t border-[#2B4747]">
+          <div className="malayalam-watermark bottom-10 left-12 opacity-[0.02] text-[10rem]" aria-hidden="true">തീരം</div>
+          <div className="max-w-6xl mx-auto relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               <div>
-                <span className="font-sans text-[10px] tracking-[0.25em] text-[#C8A46D] uppercase block mb-4">The Place</span>
+                <span className="font-sans text-[10px] tracking-[0.25em] text-[#C8A46D] uppercase block mb-4">The Destination</span>
                 <h2 className="font-serif text-4xl lg:text-5xl font-light text-[#F5F0E6] mb-6 leading-tight">
-                  Kadamakudy Isn't Pretty on Purpose
+                  About Kadamakudy:<br />A Sanctuary of Peace
                 </h2>
                 <div className="w-16 h-px bg-[#C8A46D] mb-6" aria-hidden="true" />
                 <p className="font-serif text-[16px] font-light italic text-[#F5F0E6]/80 leading-relaxed mb-5">
-                  It's a working landscape. You'll see poverty alongside beauty. Struggle alongside grace. This isn't packaged for comfort.
+                  Kadamakudy is a serene cluster of islands near Kochi where traditional life and natural beauty exist in perfect harmony.
                 </p>
                 <p className="font-sans text-[12px] leading-relaxed text-[#F5F0E6]/60 mb-5">
-                  We refuse to hide what makes this place real. The fishermen we work with are not props in someone's narrative. They're neighbors. We stay in their homes because we respect their boundaries, their rhythms, and their right to say no.
+                  This is a living community of traditional fishing families who have shaped this landscape for generations. Here, life moves gently with the tides, and travelers are welcomed as valued guests into authentic, working homes.
                 </p>
                 <p className="font-sans text-[12px] leading-relaxed text-[#F5F0E6]/60">
-                  If you come here, you're committing to seeing — not just looking. To listening — not just hearing. To understanding that transformation isn't always comfortable.
+                  Our goal is to foster slow, mindful travel that supports the local economy directly — your stay helps preserve the traditional lifestyle, mangrove ecosystems, and age-old fishing traditions of this beautiful island.
                 </p>
               </div>
-              <div className="space-y-6">
-                <div className="bg-[#143C3C]/60 p-6 border border-[#2B4747]">
-                  <h3 className="font-sans text-[11px] tracking-[0.2em] text-[#C8A46D] uppercase mb-3 font-semibold">What We Do</h3>
-                  <p className="font-sans text-[11px] leading-relaxed text-[#F5F0E6]/75">
-                    We connect respectful travelers with local families. We don't curate experiences — we facilitate genuine presence. Money goes directly to the families who host you.
+              <div className="space-y-5">
+                {([
+                  { label: 'Quiet Beauty', desc: 'Serene backwaters that mirror the sky — stunning crowd-free golden sunrises and unhurried sunsets.' },
+                  { label: 'Authentic Connection', desc: 'Genuine friendships with island families, hearing their stories and sharing traditional home-cooked meals.' },
+                  { label: 'Natural Biodiversity', desc: 'Explore mangrove channels — a natural sanctuary for over 60 species of resident and migratory birds.' },
+                  { label: 'Slow Living', desc: 'Unplug from screens and reconnect with yourself, guided by the timeless rhythms of Vembanad Lake.' },
+                ] as { label: string; desc: string }[]).map(({ label, desc }) => (
+                  <div key={label} className="bg-[#143C3C]/60 p-5 border border-[#2B4747] hover:border-[#C8A46D]/30 transition-colors duration-300">
+                    <h3 className="font-serif text-[15px] text-[#C8A46D] mb-2">{label}</h3>
+                    <p className="font-sans text-[11px] leading-relaxed text-[#F5F0E6]/65">{desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── EXPERIENCES ────────────────────────────────────────── */}
+        <section id="experiences" aria-label="Experiences in Kadamakudy" className="bg-[#0F2A2A] py-24 px-8 lg:px-20 relative overflow-hidden border-t border-[#2B4747]">
+          <div className="max-w-6xl mx-auto relative z-10">
+            <div className="text-center mb-16">
+              <span className="font-sans text-[10px] tracking-[0.25em] text-[#C8A46D] uppercase block mb-3">Immersive Rhythms</span>
+              <h2 className="font-serif text-4xl lg:text-5xl font-light text-[#F5F0E6] leading-tight">Living the Rhythms of the Water</h2>
+              <div className="w-16 h-px bg-[#C8A46D] mx-auto mt-4" aria-hidden="true" />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {([
+                { img: PEXELS.river, alt: 'Wooden canoe on Kerala backwaters', title: 'Hand-Paddled Canoe Journeys', tag: 'Slow Travel', desc: 'Glide through winding water channels shaded by coconut palms and dense mangrove forests in a traditional wooden canoe — the perfect way to discover the hidden corners of the islands.' },
+                { img: PEXELS.g5, alt: 'Traditional Chinese fishing nets at Kadamakudy', title: 'Traditional Net Mending', tag: 'Local Culture', desc: 'Watch fishermen operate magnificent Chinese fishing nets (cheena vala) and learn the craft of hand-net casting. Join them quietly in mending nets during peaceful afternoons.' },
+                { img: PEXELS.architecture, alt: 'Traditional Kerala kitchen', title: 'Kerala Culinary Heritage', tag: 'Gastronomy', desc: 'Prepare authentic Kerala dishes with fresh coconut, local spices, curry leaves, and freshly caught fish or prawns — cooked on traditional clay stoves by your host family.' },
+              ] as { img: string; alt: string; title: string; tag: string; desc: string }[]).map(({ img, alt, title, tag, desc }) => (
+                <div key={title} className="bg-[#143C3C]/40 border border-[#2B4747] rounded-sm overflow-hidden group hover:border-[#C8A46D]/30 transition-all duration-300 flex flex-col">
+                  <div className="h-48 overflow-hidden relative">
+                    <img src={img} alt={alt} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-[#0F2A2A]/40" aria-hidden="true" />
+                  </div>
+                  <div className="p-6 flex-1 flex flex-col justify-between">
+                    <div className="space-y-3">
+                      <h3 className="font-serif text-xl font-light text-[#F5F0E6]">{title}</h3>
+                      <p className="font-sans text-[11px] leading-relaxed text-[#F5F0E6]/65">{desc}</p>
+                    </div>
+                    <div className="pt-4 flex items-center gap-2">
+                      <Circle className="w-1 h-1 fill-[#C8A46D] text-[#C8A46D]" aria-hidden="true" />
+                      <span className="font-sans text-[9px] tracking-[0.2em] uppercase text-[#C8A46D]">{tag}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ─── STAY OPTIONS ───────────────────────────────────────── */}
+        <section id="stays" aria-label="Homestay Accommodation in Kadamakudy" className="bg-[#0F2A2A] py-24 px-8 lg:px-20 relative overflow-hidden border-t border-[#2B4747]">
+          <div className="max-w-6xl mx-auto relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+              <div className="lg:col-span-5 space-y-8">
+                <div>
+                  <span className="font-sans text-[10px] tracking-[0.25em] text-[#C8A46D] uppercase block mb-4">Welcoming Homes</span>
+                  <h2 className="font-serif text-4xl lg:text-5xl font-light text-[#F5F0E6] leading-tight">Stay with Island Families</h2>
+                  <div className="w-16 h-px bg-[#C8A46D] mt-6 mb-6" aria-hidden="true" />
+                  <p className="font-sans text-[12px] leading-relaxed text-[#F5F0E6]/70">
+                    Your stay in Kadamakudy is hosted in the traditional homes of local families — comfortable, clean, and offering a firsthand experience of warm backwater island hospitality.
                   </p>
                 </div>
-                <div className="bg-[#143C3C]/60 p-6 border border-[#2B4747]">
-                  <h3 className="font-sans text-[11px] tracking-[0.2em] text-[#C8A46D] uppercase mb-3 font-semibold">What We Don't Do</h3>
-                  <p className="font-sans text-[11px] leading-relaxed text-[#F5F0E6]/75">
-                    We don't run sunset tours. We don't perform culture. We don't pretend poverty is picturesque. We don't accept tourists who see locals as scenery.
-                  </p>
+                <div className="space-y-5">
+                  {([
+                    { title: 'Cozy & Clean Rooms', desc: 'Comfortable guest rooms with modern essentials, designed to breathe naturally with the backwater breeze.' },
+                    { title: 'Home-Cooked Meals', desc: 'Three daily traditional meals prepared with love by your host family using fresh local ingredients and Kerala spices.' },
+                    { title: 'Warm Island Hospitality', desc: 'Experience the natural warmth of Kerala culture, where guests are welcomed as extended family members.' },
+                  ] as { title: string; desc: string }[]).map(({ title, desc }) => (
+                    <div key={title} className="flex gap-4 items-start">
+                      <div className="w-8 h-8 rounded-full border border-[#C8A46D]/30 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                        <Circle className="w-1.5 h-1.5 fill-[#C8A46D] text-[#C8A46D]" />
+                      </div>
+                      <div>
+                        <h4 className="font-serif text-base text-[#F5F0E6] mb-1">{title}</h4>
+                        <p className="font-sans text-[11px] text-[#F5F0E6]/60 leading-relaxed">{desc}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <div className="bg-[#143C3C]/60 p-6 border border-[#2B4747]">
-                  <h3 className="font-sans text-[11px] tracking-[0.2em] text-[#C8A46D] uppercase mb-3 font-semibold">Requirements</h3>
-                  <p className="font-sans text-[11px] leading-relaxed text-[#F5F0E6]/75">
-                    Humility. Curiosity. Patience with discomfort. Respect for boundaries. A willingness to question what you know about travel and yourself.
-                  </p>
+              </div>
+              <div className="lg:col-span-7">
+                <div className="relative rounded-sm overflow-hidden canvas-frame h-[440px]">
+                  <img src={PEXELS.quote} alt="Traditional Kerala home interior" loading="lazy" className="w-full h-full object-cover slow-drift" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0F2A2A] via-[#0F2A2A]/20 to-transparent" aria-hidden="true" />
+                  <div className="absolute bottom-6 left-6 right-6 p-6 bg-[#143C3C]/80 backdrop-blur-sm border border-[#2B4747]">
+                    <p className="font-serif text-lg font-light text-[#F5F0E6] italic">
+                      "We felt at home — sharing morning coffee with the family and watching sunlight ripple across the water."
+                    </p>
+                    <span className="font-sans text-[9px] tracking-[0.2em] uppercase text-[#C8A46D] block mt-2">— Guest Reflection</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
+
+        {/* ─── LOCAL LIFE ─────────────────────────────────────────── */}
+        <section id="locallife" aria-label="Local Life and Culture in Kadamakudy" className="bg-[#0F2A2A] py-24 px-8 lg:px-20 relative overflow-hidden border-t border-[#2B4747]">
+          <div className="max-w-6xl mx-auto relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+              <div>
+                <span className="font-sans text-[10px] tracking-[0.25em] text-[#C8A46D] uppercase block mb-4">Traditional Rhythms</span>
+                <h2 className="font-serif text-4xl lg:text-5xl font-light text-[#F5F0E6] leading-tight mb-6">
+                  Traditions of a Kerala<br />Fishing Village
+                </h2>
+                <div className="w-16 h-px bg-[#C8A46D] mb-6" aria-hidden="true" />
+                <p className="font-sans text-[12px] leading-relaxed text-[#F5F0E6]/70 mb-8">
+                  The Kadamakudy islands are home to close-knit communities whose lives are woven with the Vembanad Lake. Traditional aquaculture, handcrafts, and a deep connection to nature shape everyday life here.
+                </p>
+                <div className="rounded-sm overflow-hidden canvas-frame h-[260px]">
+                  <img src={PEXELS.skyWater} alt="Fisherman in canoe at sunset over Kadamakudy backwaters" loading="lazy" className="w-full h-full object-cover" />
+                </div>
+              </div>
+              <div className="space-y-5">
+                {([
+                  { title: 'Prawn & Pokkali Farming', desc: 'Traditional brackish water aquaculture rotated with Pokkali rice cultivation — a sustainable, eco-friendly system practiced for generations.' },
+                  { title: 'Coir Spinning & Cottage Industries', desc: 'The hand-spinning of coconut husks into coir rope is a classic island cottage industry. Watch local women work with incredible skill and quiet efficiency.' },
+                  { title: 'Bird Sanctuary & Biodiversity', desc: 'A bird lover\'s paradise hosting kingfishers, herons, egrets, and rare migratory birds from continents far away.' },
+                  { title: 'Nearby Attractions', desc: 'Fort Kochi (20 km), Ernakulam city (12 km), and Cherai Beach (22 km) are all within easy reach — perfect complements to island life.' },
+                ] as { title: string; desc: string }[]).map(({ title, desc }) => (
+                  <div key={title} className="bg-[#143C3C]/60 p-5 border border-[#2B4747] hover:border-[#C8A46D]/30 transition-colors duration-300">
+                    <h3 className="font-serif text-[15px] text-[#C8A46D] mb-2">{title}</h3>
+                    <p className="font-sans text-[11px] leading-relaxed text-[#F5F0E6]/65">{desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── TRAVEL TIPS ────────────────────────────────────────── */}
+        <section id="tips" aria-label="Travel Tips for Kadamakudy" className="bg-[#143C3C]/30 py-20 px-8 lg:px-20 relative overflow-hidden border-t border-[#2B4747]">
+          <div className="max-w-6xl mx-auto relative z-10">
+            <div className="text-center mb-12">
+              <span className="font-sans text-[10px] tracking-[0.25em] text-[#C8A46D] uppercase block mb-3">Before You Arrive</span>
+              <h2 className="font-serif text-3xl lg:text-4xl font-light text-[#F5F0E6]">Tips for Conscious Travelers</h2>
+              <div className="w-12 h-px bg-[#C8A46D] mx-auto mt-4" aria-hidden="true" />
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {([
+                { heading: 'Best Season to Visit', tip: 'October to March — pleasant tropical breezes, calm waters, and active bird migrations make this the golden window for a backwater stay.' },
+                { heading: 'What to Pack', tip: 'Light breathable cotton clothing, comfortable sandals, sunscreen, insect repellent, and a curious, open heart.' },
+                { heading: 'Respecting Local Rhythms', tip: 'Ask before photographing residents. Minimize single-use plastic. Move at the island\'s own pace — slow, gentle, and deeply respectful.' },
+              ] as { heading: string; tip: string }[]).map(({ heading, tip }) => (
+                <div key={heading} className="border border-[#2B4747] p-6 bg-[#0F2A2A]/60">
+                  <div className="w-8 h-px bg-[#C8A46D] mb-4" aria-hidden="true" />
+                  <h3 className="font-serif text-lg font-light text-[#F5F0E6] mb-3">{heading}</h3>
+                  <p className="font-sans text-[11px] leading-relaxed text-[#F5F0E6]/65">{tip}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ─── FAQ ────────────────────────────────────────────── */}
+        <FAQSection />
 
         {/* ─── CONTACT ────────────────────────────────────────────── */}
         <section id="contact" aria-label="Contact Kadamakudy — enquire about backwater homestays" className="bg-[#0F2A2A] py-24 px-8 lg:px-20 relative overflow-hidden border-t border-[#2B4747]">
@@ -830,17 +1039,17 @@ export default function App() {
                   </div>
                 </address>
 
-                {/* Before You Contact Box */}
+                {/* Before You Connect Box */}
                 <div className="bg-[#143C3C]/40 border border-[#2B4747] p-6 rounded-sm space-y-4">
-                  <h3 className="font-serif text-lg font-light text-[#C8A46D]">Before You Contact</h3>
+                  <h3 className="font-serif text-lg font-light text-[#C8A46D]">Before You Connect</h3>
                   <p className="font-sans text-[11px] leading-relaxed text-[#F5F0E6]/60">
-                    Ensure you are aligned with our ethos. We are not a luxury resort. Expect digital silence, real working hours, and organic community host boundaries.
+                    Expect a peaceful, natural escape with digital silence, delicious home-cooked meals, and authentic community connections.
                   </p>
                   <div className="h-px bg-[#2B4747] w-full" aria-hidden="true" />
                   <ul className="space-y-2.5" aria-label="Important information before contacting">
                     <li className="flex gap-2.5 items-start">
                       <Circle className="w-1.5 h-1.5 fill-[#C8A46D] text-[#C8A46D] mt-1.5 flex-shrink-0" aria-hidden="true" />
-                      <span className="font-sans text-[10px] text-[#F5F0E6]/50">Mutual screening: We interview every guest.</span>
+                      <span className="font-sans text-[10px] text-[#F5F0E6]/50">Friendly conversation: We chat with every guest to pair you with the ideal host home.</span>
                     </li>
                     <li className="flex gap-2.5 items-start">
                       <Circle className="w-1.5 h-1.5 fill-[#C8A46D] text-[#C8A46D] mt-1.5 flex-shrink-0" aria-hidden="true" />
@@ -955,7 +1164,7 @@ export default function App() {
           <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-64 h-64 rounded-full bg-[#C8A46D]/5 blur-[80px] pointer-events-none" aria-hidden="true" />
           <div className="max-w-6xl mx-auto relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
-              
+
               {/* Left Column: Heading */}
               <div className="lg:col-span-5">
                 <span className="font-sans text-[10px] tracking-[0.3em] text-[#C8A46D] uppercase block mb-3">Resource Hub</span>
@@ -970,7 +1179,7 @@ export default function App() {
 
               {/* Right Column: Links Grid */}
               <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8">
-                
+
                 {/* Internal Links */}
                 <div>
                   <h3 className="font-serif text-lg font-light text-[#C8A46D] mb-4">Explore Kadamakudy</h3>
