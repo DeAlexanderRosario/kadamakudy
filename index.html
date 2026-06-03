@@ -2,12 +2,249 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-default>Vite + React + TS</title>
-    <meta property="og:image" content="https://bolt.new/static/og_default.png" />
+
+    <!-- ═══ PRIMARY SEO META TAGS ═══════════════════════════════════ -->
+    <title>Kadamakudy — Authentic Kerala Backwater Homestays | Not Tourist. Witness.</title>
+    <meta name="description" content="Experience authentic Kerala backwater life in Kadamakudy. Stay with local fishing families, witness timeless rhythms, and belong to a place where life moves with the water. Conscious travel through Kerala's living islands near Kochi." />
+    <meta name="keywords" content="Kadamakudy, Kerala backwaters, backwater homestay Kerala, Kerala homestay, authentic travel Kerala, fishing village Kerala, Kadamakudy islands, responsible travel India, Kerala tourism, backwater experience, conscious travel, Kochi backwaters, Ernakulam tourism" />
+    <meta name="author" content="De Alexander Rosario" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://kadamakudy.vercel.app/" />
+    <meta name="theme-color" content="#0F2A2A" />
+    <meta name="geo.region" content="IN-KL" />
+    <meta name="geo.placename" content="Kadamakudy, Kerala, India" />
+    <meta name="geo.position" content="10.0526;76.2570" />
+    <meta name="ICBM" content="10.0526, 76.2570" />
+
+    <!-- ═══ FAVICON ════════════════════════════════════════════════ -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/images/hero.png" />
+
+    <!-- ═══ OPEN GRAPH / FACEBOOK ════════════════════════════════════ -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kadamakudy.vercel.app/" />
+    <meta property="og:title" content="Kadamakudy — Authentic Kerala Backwater Homestays" />
+    <meta property="og:description" content="Not tourist. Witness. Stay with local fishing families in Kerala's living backwater islands. Conscious travel that transforms the traveler." />
+    <meta property="og:image" content="https://kadamakudy.vercel.app/images/hero.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Kadamakudy Kerala backwater landscape with traditional homes and waterways" />
+    <meta property="og:site_name" content="Kadamakudy" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- ═══ TWITTER CARD ═════════════════════════════════════════════ -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://bolt.new/static/og_default.png" />
+    <meta name="twitter:title" content="Kadamakudy — Authentic Kerala Backwater Homestays" />
+    <meta name="twitter:description" content="Not tourist. Witness. Stay with local fishing families in Kerala's living backwater islands." />
+    <meta name="twitter:image" content="https://kadamakudy.vercel.app/images/hero.png" />
+    <meta name="twitter:image:alt" content="Kadamakudy Kerala backwater landscape" />
+
+    <!-- ═══ GOOGLE FONTS — Preconnect + Non-blocking load ═══════════ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" /></noscript>
+
+    <!-- Preload LCP hero image for fastest First Contentful Paint -->
+    <link rel="preload" as="image" href="/images/hero.png" fetchpriority="high" />
+
+    <!-- ═══ STRUCTURED DATA: Organization ════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Kadamakudy",
+      "alternateName": "Kadamakudy Kerala Backwaters",
+      "url": "https://kadamakudy.vercel.app",
+      "logo": "https://kadamakudy.vercel.app/images/hero.png",
+      "description": "Conscious travel through Kerala's living backwaters. We connect respectful travelers with local fishing families on the backwater islands of Kadamakudy, Kerala.",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Kadamakudy, Kerala, India"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kadamakudy",
+        "addressRegion": "Kerala",
+        "postalCode": "682020",
+        "addressCountry": "IN"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+91-7510616989",
+          "contactType": "customer service",
+          "availableLanguage": ["English", "Malayalam"]
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "hello@kadamakudy.com",
+          "contactType": "customer service"
+        }
+      ],
+      "sameAs": [
+        "https://github.com/DeAlexanderRosario/kadamakudy",
+        "https://kadamakudy.vercel.app"
+      ]
+    }
+    </script>
+
+    <!-- ═══ STRUCTURED DATA: TouristAttraction / LocalBusiness ══════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["TouristAttraction", "LodgingBusiness"],
+      "name": "Kadamakudy Islands Homestay",
+      "alternateName": "Kadamakkudy Islands",
+      "description": "A cluster of backwater islands near Kochi, Kerala offering authentic homestay experiences with local fishing families. Known for mangrove forests, migratory birds, and traditional prawn farming.",
+      "url": "https://kadamakudy.vercel.app",
+      "image": "https://kadamakudy.vercel.app/images/hero.png",
+      "telephone": "+91-7510616989",
+      "email": "hello@kadamakudy.com",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "10.0526",
+        "longitude": "76.2570"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kadamakudy Islands",
+        "addressLocality": "Kadamakudy",
+        "addressRegion": "Kerala",
+        "postalCode": "682020",
+        "addressCountry": "IN"
+      },
+      "touristType": ["Eco-tourism", "Cultural tourism", "Responsible travel", "Homestay"],
+      "isAccessibleForFree": false,
+      "publicAccess": true,
+      "priceRange": "$$"
+    }
+    </script>
+
+    <!-- ═══ STRUCTURED DATA: FAQPage ════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does Kadamakudy offer travelers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kadamakudy connects respectful travelers with local fishing families on Kerala's backwater islands. We don't curate experiences — we facilitate genuine presence. Money goes directly to the families who host you. Expect working homes, real community life, and a place where time moves with the water."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the requirements to visit Kadamakudy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Humility. Curiosity. Patience with discomfort. Respect for boundaries. A willingness to question what you know about travel and yourself. We interview every guest through a mutual screening process."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Kadamakudy a luxury resort?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Kadamakudy is not a luxury resort. We don't run sunset tours or perform culture. Expect digital silence, real working hours, and organic community host boundaries. You'll stay in working homes and learn from fishermen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is Kadamakudy located?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kadamakudy is a group of islands located in the backwaters near Kochi (Cochin), Kerala, India at coordinates 10.0526° N, 76.2570° E. It is known for its mangrove forests, migratory birds, and traditional fishing communities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I contact Kadamakudy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can reach us via email at hello@kadamakudy.com or phone at +91 75106 16989. Average response timeline is 48 to 72 hours. We practice mutual screening — we interview every guest."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What makes Kadamakudy different from other Kerala tourism?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kadamakudy refuses to package the place for comfort. Instead of sunset tours and curated experiences, we offer genuine immersion in backwater community life. No performance, no spectacle — just real Kerala."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- ═══ STRUCTURED DATA: WebSite ════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Kadamakudy",
+      "alternateName": "Kadamakudy Kerala Backwaters",
+      "url": "https://kadamakudy.vercel.app",
+      "description": "A cinematic digital journey through Kerala's living backwaters. Authentic homestays with local fishing families.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kadamakudy"
+      },
+      "inLanguage": "en",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://kadamakudy.vercel.app/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- ═══ STRUCTURED DATA: Author/Creator ════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "De Alexander Rosario",
+      "jobTitle": "Designer, Developer, Storyteller",
+      "description": "Building digital experiences inspired by place, memory, and human connection.",
+      "url": "https://github.com/DeAlexanderRosario",
+      "sameAs": [
+        "https://github.com/DeAlexanderRosario"
+      ]
+    }
+    </script>
+
+    <!-- ═══ STRUCTURED DATA: BreadcrumbList ════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://kadamakudy.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Kerala Backwater Homestays",
+          "item": "https://kadamakudy.vercel.app/#experience"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Contact",
+          "item": "https://kadamakudy.vercel.app/#contact"
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
