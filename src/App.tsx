@@ -327,7 +327,9 @@ export default function App() {
               <em className="not-italic text-[#C8A46D] font-light">Witness.</em>
             </h1>
             <p className="font-sans text-[10px] tracking-[0.25em] text-[#F5F0E6]/70 uppercase leading-relaxed mb-8 max-w-[340px]">
-              Stay in working homes. Learn from fishermen.<br />Understand a place where time moves<br />with the water.
+              Experience an authentic <a href="#experience" className="text-[#C8A46D] hover:underline transition-colors">Kerala backwater homestay</a>.<br />
+              Learn from the local <a href="#stories" className="text-[#C8A46D] hover:underline transition-colors">fishing village Kerala</a>.<br />
+              Discover the <a href="#places" className="text-[#C8A46D] hover:underline transition-colors">Kadamakudy Islands</a>.
             </p>
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
@@ -396,7 +398,7 @@ export default function App() {
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-5">
                 <span className="font-sans text-[11px] tracking-[0.15em] text-[#8a7a5e]" aria-hidden="true">01</span>
-                <span className="font-sans text-[10px] tracking-[0.25em] uppercase text-[#8a7a5e]">The River</span>
+                <span className="font-sans text-[10px] tracking-[0.25em] uppercase text-[#8a7a5e]">The River — Kochi Backwaters</span>
               </div>
               <div className="w-8 h-px bg-[#C8A46D] mb-5" aria-hidden="true" />
               <h2 className="font-serif text-[18px] font-light text-[#2b4747] leading-snug italic">
@@ -465,7 +467,7 @@ export default function App() {
                 </h2>
                 <div className="w-8 h-px bg-[#C8A46D] mb-4" aria-hidden="true" />
                 <p className="font-serif text-sm font-light text-[#F5F0E6]/70 italic leading-relaxed max-w-[240px]">
-                  Simple lives. Timeless rhythms. Stories passed down with the wind.
+                  Simple lives in a traditional <a href="#stories" className="text-[#C8A46D] hover:underline transition-colors">fishing village Kerala</a>. Timeless backwater rhythms. Stories passed down through <a href="#experience" className="text-[#C8A46D] hover:underline transition-colors">authentic travel Kerala</a>.
                 </p>
               </div>
               <button aria-label="Explore: Life Along the Water in Kadamakudy" className="relative z-10 flex items-center gap-2 group mt-4 w-fit">
@@ -512,7 +514,7 @@ export default function App() {
                 </h2>
                 <div className="w-8 h-px bg-[#C8A46D] mb-4" aria-hidden="true" />
                 <p className="font-sans text-[11px] leading-relaxed text-[#F5F0E6]/60 max-w-[280px]">
-                  Homes that breathe with the water. Built by tradition, held by nature. Tiled roofs matching the mud embankments.
+                  Homes that breathe with the <a href="#journey" className="text-[#C8A46D] hover:underline transition-colors">Kerala backwaters</a>. Built by tradition, held by nature. Traditional homes in a serene <a href="#contact" className="text-[#C8A46D] hover:underline transition-colors">Kadamakudy islands</a> community.
                 </p>
               </div>
               <button aria-label="Discover Kerala backwater floating architecture and traditional homes" className="relative z-10 flex items-center gap-2 group mt-4 w-fit">
@@ -548,7 +550,7 @@ export default function App() {
                 </h2>
                 <div className="w-8 h-px bg-[#C8A46D] mb-4" aria-hidden="true" />
                 <p className="font-sans text-[11px] leading-relaxed text-[#F5F0E6]/60 max-w-[200px]">
-                  Where the sky meets its reflection and both become something beautiful.
+                  Where the sky meets the <a href="#gallery" className="text-[#C8A46D] hover:underline transition-colors">Kochi backwaters</a> reflection, offering a quiet space for <a href="#experience" className="text-[#C8A46D] hover:underline transition-colors">conscious travel</a>.
                 </p>
               </div>
               <button aria-label="Explore the sky and water reflections of Kadamakudy" className="relative z-10 flex items-center gap-2 group mt-4 w-fit">
@@ -578,11 +580,11 @@ export default function App() {
                 <span className="font-sans text-[10px] tracking-[0.2em] text-[#C8A46D]" aria-hidden="true">05</span>
               </div>
               <h2 className="font-serif text-2xl font-light text-[#F5F0E6] leading-tight mb-3">
-                The Experience
+                The <a href="#contact" className="text-[#C8A46D] hover:underline">Backwater Experience</a>
               </h2>
               <div className="w-8 h-px bg-[#C8A46D] mb-4" aria-hidden="true" />
               <p className="font-sans text-[10px] leading-relaxed text-[#F5F0E6]/60 max-w-[190px]">
-                This is not a place you visit. It is a feeling you carry long after you leave.
+                An immersive journey of <a href="#about" className="text-[#C8A46D] hover:underline">responsible travel India</a>. It is a connection you carry long after you leave.
               </p>
             </div>
             <button aria-label="Journey on — explore the Kadamakudy backwater experience" className="relative z-10 flex items-center gap-2 group mt-4 w-fit">
@@ -944,6 +946,94 @@ export default function App() {
                 </div>
               </div>
 
+            </div>
+          </div>
+        </section>
+
+        {/* ─── LOCAL RESOURCES & CONNECTIONS (SEO Link Building) ───── */}
+        <section aria-label="Local resources and connections" className="bg-[#143C3C]/30 border-t border-[#2B4747] py-16 px-8 lg:px-20 relative overflow-hidden">
+          <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-64 h-64 rounded-full bg-[#C8A46D]/5 blur-[80px] pointer-events-none" aria-hidden="true" />
+          <div className="max-w-6xl mx-auto relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
+              
+              {/* Left Column: Heading */}
+              <div className="lg:col-span-5">
+                <span className="font-sans text-[10px] tracking-[0.3em] text-[#C8A46D] uppercase block mb-3">Resource Hub</span>
+                <h2 className="font-serif text-3xl lg:text-4xl font-light text-[#F5F0E6] leading-tight mb-4">
+                  Local Connections<br />&amp; Resources
+                </h2>
+                <div className="w-16 h-px bg-[#C8A46D] mb-6" aria-hidden="true" />
+                <p className="font-sans text-[12px] leading-relaxed text-[#F5F0E6]/60 max-w-sm">
+                  To further understand Kadamakudy and the wider Vembanad wetland ecosystem, explore these internal and external resources. We believe in open knowledge and community visibility.
+                </p>
+              </div>
+
+              {/* Right Column: Links Grid */}
+              <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                
+                {/* Internal Links */}
+                <div>
+                  <h3 className="font-serif text-lg font-light text-[#C8A46D] mb-4">Explore Kadamakudy</h3>
+                  <ul className="space-y-3" aria-label="Internal page sections">
+                    <li>
+                      <a href="#journey" className="font-sans text-[11px] tracking-[0.1em] text-[#F5F0E6]/75 hover:text-[#C8A46D] transition-colors flex items-center gap-2 group">
+                        <ArrowRight className="w-3 h-3 text-[#C8A46D]/50 group-hover:translate-x-1 transition-transform" />
+                        <span>Kadamakudy Islands Journey</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#stories" className="font-sans text-[11px] tracking-[0.1em] text-[#F5F0E6]/75 hover:text-[#C8A46D] transition-colors flex items-center gap-2 group">
+                        <ArrowRight className="w-3 h-3 text-[#C8A46D]/50 group-hover:translate-x-1 transition-transform" />
+                        <span>Fishing Village Kerala Stories</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#experience" className="font-sans text-[11px] tracking-[0.1em] text-[#F5F0E6]/75 hover:text-[#C8A46D] transition-colors flex items-center gap-2 group">
+                        <ArrowRight className="w-3 h-3 text-[#C8A46D]/50 group-hover:translate-x-1 transition-transform" />
+                        <span>Kerala Backwater Homestays</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#gallery" className="font-sans text-[11px] tracking-[0.1em] text-[#F5F0E6]/75 hover:text-[#C8A46D] transition-colors flex items-center gap-2 group">
+                        <ArrowRight className="w-3 h-3 text-[#C8A46D]/50 group-hover:translate-x-1 transition-transform" />
+                        <span>Chinese Fishing Nets Gallery</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* External Links */}
+                <div>
+                  <h3 className="font-serif text-lg font-light text-[#C8A46D] mb-4">External Authority Resources</h3>
+                  <ul className="space-y-3" aria-label="External reference links">
+                    <li>
+                      <a href="https://en.wikipedia.org/wiki/Kadamakkudy" target="_blank" rel="noopener noreferrer" className="font-sans text-[11px] tracking-[0.1em] text-[#F5F0E6]/75 hover:text-[#C8A46D] transition-colors flex items-center gap-2 group">
+                        <ArrowRight className="w-3 h-3 text-[#C8A46D]/50 group-hover:translate-x-1 transition-transform" />
+                        <span>Wikipedia: Kadamakkudy Islands</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://en.wikipedia.org/wiki/Vembanad" target="_blank" rel="noopener noreferrer" className="font-sans text-[11px] tracking-[0.1em] text-[#F5F0E6]/75 hover:text-[#C8A46D] transition-colors flex items-center gap-2 group">
+                        <ArrowRight className="w-3 h-3 text-[#C8A46D]/50 group-hover:translate-x-1 transition-transform" />
+                        <span>Wikipedia: Vembanad Backwaters</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.keralatourism.org/" target="_blank" rel="noopener noreferrer" className="font-sans text-[11px] tracking-[0.1em] text-[#F5F0E6]/75 hover:text-[#C8A46D] transition-colors flex items-center gap-2 group">
+                        <ArrowRight className="w-3 h-3 text-[#C8A46D]/50 group-hover:translate-x-1 transition-transform" />
+                        <span>Official Kerala Tourism Department</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://maps.google.com/?q=Kadamakudy+Kerala+India" target="_blank" rel="noopener noreferrer" className="font-sans text-[11px] tracking-[0.1em] text-[#F5F0E6]/75 hover:text-[#C8A46D] transition-colors flex items-center gap-2 group">
+                        <ArrowRight className="w-3 h-3 text-[#C8A46D]/50 group-hover:translate-x-1 transition-transform" />
+                        <span>Google Maps: Kochi Backwaters Location</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
             </div>
           </div>
         </section>
