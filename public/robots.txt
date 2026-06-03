@@ -4,7 +4,6 @@
 # ─── Allow all crawlers ─────────────────────────────────────────
 User-agent: *
 Allow: /
-Disallow: /assets/
 
 # ─── Block AI scrapers that ignore content rights ───────────────
 User-agent: GPTBot
