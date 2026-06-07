@@ -12,18 +12,18 @@ const NAV_LINKS = [
 ];
 
 const PEXELS = {
-  hero: '/images/hero.png',
-  river: '/images/houseboat-modern.png',
-  lifeWater: '/images/dwelling-simple.png',
-  architecture: '/images/home-traditional.jpeg',
-  skyWater: '/images/man.jpeg',
-  quote: '/images/home-traditional.jpeg',
-  g1: '/images/fishing-structures.png',
-  g2: '/images/houseboat-modern.png',
-  g3: '/images/dwelling-simple.png',
-  g4: '/images/home-traditional.jpeg',
-  g5: '/images/fishing-structures.png',
-  g6: '/images/houseboat-modern.png',
+  hero: '/images/kadamakudy-boating-backwater-tours.jpg',
+  river: '/images/kadamakudy-shikhara-boat-cruise-kochi.jpg',
+  lifeWater: '/images/kadamakudy-backwater-scenery-kochi.jpg',
+  architecture: '/images/kadamakudy-authentic-homestay-property.jpg',
+  skyWater: '/images/kadamakudy-traditional-canoe-ride-sunrise.jpg',
+  quote: '/images/kadamakudy-authentic-homestay-property.jpg',
+  g1: '/images/kadamakudy-mangrove-kayaking-kerala.jpg',
+  g2: '/images/kadamakudy-shikhara-boat-cruise-kochi.jpg',
+  g3: '/images/kadamakudy-backwater-scenery-kochi.jpg',
+  g4: '/images/kadamakudy-authentic-homestay-property.jpg',
+  g5: '/images/kadamakudy-mangrove-kayaking-kerala.jpg',
+  g6: '/images/kadamakudy-shikhara-boat-cruise-kochi.jpg',
 };
 
 function WaterCanvas() {
@@ -188,24 +188,24 @@ function FAQSection() {
 
   const faqs = [
     {
-      q: "What does Kadamakudy offer travelers?",
-      a: "Kadamakudy offers a peaceful escape near Kochi where you can stay with local families in authentic homestays. You can explore the beautiful backwaters, witness traditional village activities like prawn farming, and enjoy home-cooked Kerala cuisine."
+      q: "What boating and sightseeing experiences are available at Kadamakudy?",
+      a: "Kadamakudy offers traditional hand-paddled canoe rides, shikara boat cruises, and peaceful backwater sightseeing tours. You can glide through serene waterways, spot migratory birds, witness traditional Chinese fishing nets (cheena vala), and experience the untouched beauty of Kerala island life — just 15 km from Kochi."
     },
     {
-      q: "What should I expect from the homestay accommodations?",
-      a: "Expect warm, clean, and comfortable rooms hosted by welcoming local families. These are real family homes, offering a simple and authentic stay with modern essentials and home-cooked meals."
+      q: "What is the best time for a Kadamakudy boating trip?",
+      a: "The prime time is during sunrise (5:45 AM to 8:00 AM) or evening sunset (4:30 PM to 6:30 PM). The water mirrors the sky perfectly during these hours, the air is cool, and migratory bird activity peaks across the fish farms and mangrove channels."
     },
     {
-      q: "How can I get to Kadamakudy?",
-      a: "Kadamakudy is located approximately 15 km from Ernakulam (Kochi) city center. It is easily accessible by road (car or auto-rickshaw) to the island's edge, followed by a short and scenic country boat or canoe ride to the host homes."
+      q: "How do I get to Kadamakudy from Kochi or Ernakulam?",
+      a: "Kadamakudy is just 12–15 km from central Ernakulam — roughly a 25–35 minute drive via the Pizhala and Varapuzha bridges. Cars and two-wheelers can reach the waterfront boat docks directly. No special transport needed."
     },
     {
-      q: "Are the experiences suitable for families?",
-      a: "Yes! Kadamakudy is perfect for families, couples, and solo travelers who appreciate nature, local culture, and a peaceful, slower pace of travel."
+      q: "Is boating at Kadamakudy suitable for families and children?",
+      a: "Absolutely. The calm, sheltered backwater channels of Kadamakudy make boating safe and enjoyable for all ages — families, couples, senior travelers, and children alike. The pace is slow and peaceful, never rushed."
     },
     {
-      q: "How do I book a stay or visit?",
-      a: "You can send an inquiry using our contact form, email hello@kadamakudy.com, or call us. We conduct a friendly, informal conversation with all prospective guests to ensure we match you with the perfect host family."
+      q: "How do I enquire about a boat ride or sightseeing visit?",
+      a: "Simply WhatsApp or call +91 99476 16989 or +91 75106 16989. You can also use the contact form below or email hello@kadamakudy.com. We will share all details about timings, sightseeing spots, and what to expect."
     }
   ];
 
@@ -1014,12 +1014,24 @@ export default function App() {
                     </div>
                   </a>
 
+                  <a href="tel:+919947616989" className="flex items-center gap-4 group cursor-pointer no-underline">
+                    <div className="w-10 h-10 rounded-full border border-[#C8A46D]/20 flex items-center justify-center group-hover:border-[#C8A46D] transition-all duration-300" aria-hidden="true">
+                      <Phone className="w-4 h-4 text-[#C8A46D] group-hover:scale-110 transition-transform" />
+                    </div>
+                    <div>
+                      <span className="font-sans text-[9px] tracking-[0.2em] text-[#F5F0E6]/50 uppercase block mb-0.5">Call / WhatsApp</span>
+                      <p className="font-sans text-[11px] text-[#F5F0E6] group-hover:text-[#C8A46D] transition-colors">
+                        +91 99476 16989
+                      </p>
+                    </div>
+                  </a>
+
                   <a href="tel:+917510616989" className="flex items-center gap-4 group cursor-pointer no-underline">
                     <div className="w-10 h-10 rounded-full border border-[#C8A46D]/20 flex items-center justify-center group-hover:border-[#C8A46D] transition-all duration-300" aria-hidden="true">
                       <Phone className="w-4 h-4 text-[#C8A46D] group-hover:scale-110 transition-transform" />
                     </div>
                     <div>
-                      <span className="font-sans text-[9px] tracking-[0.2em] text-[#F5F0E6]/50 uppercase block mb-0.5">Phone</span>
+                      <span className="font-sans text-[9px] tracking-[0.2em] text-[#F5F0E6]/50 uppercase block mb-0.5">Alternate / WhatsApp</span>
                       <p className="font-sans text-[11px] text-[#F5F0E6] group-hover:text-[#C8A46D] transition-colors">
                         +91 75106 16989
                       </p>
@@ -1339,6 +1351,42 @@ export default function App() {
           </div>
         </div>
       </footer>
+      {/* ─── FLOATING WHATSAPP ENQUIRY BUTTON ─────────────────── */}
+      <a
+        id="whatsapp-float-btn"
+        href="https://wa.me/919947616989?text=Hello%21%20I%20would%20like%20to%20know%20more%20about%20boating%20and%20sightseeing%20at%20Kadamakudy%2C%20Kerala."
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="WhatsApp Enquiry — Kadamakudy Boating & Sightseeing"
+        title="Enquire on WhatsApp"
+        style={{
+          position: 'fixed',
+          bottom: '24px',
+          right: '24px',
+          zIndex: 9999,
+          display: 'flex',
+          alignItems: 'center',
+          gap: '10px',
+          backgroundColor: '#25D366',
+          color: '#fff',
+          borderRadius: '50px',
+          padding: '10px 18px 10px 14px',
+          boxShadow: '0 4px 24px rgba(37,211,102,0.35)',
+          textDecoration: 'none',
+          fontFamily: 'inherit',
+          transition: 'transform 0.2s, box-shadow 0.2s',
+        }}
+        onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.transform = 'scale(1.05)'; (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 6px 32px rgba(37,211,102,0.5)'; }}
+        onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.transform = 'scale(1)'; (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 4px 24px rgba(37,211,102,0.35)'; }}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="22" height="22" fill="white" aria-hidden="true">
+          <path d="M16.003 0C7.164 0 .003 7.162.003 16c0 2.822.737 5.476 2.027 7.785L.003 32l8.406-2.004A15.95 15.95 0 0016.003 32C24.84 32 32 24.838 32 16S24.84 0 16.003 0zm0 29.25c-2.662 0-5.15-.724-7.294-1.984l-.522-.308-5.004 1.193 1.215-4.876-.34-.543A13.18 13.18 0 012.753 16c0-7.305 5.945-13.25 13.25-13.25S29.25 8.695 29.25 16 23.308 29.25 16.003 29.25zm7.265-9.87c-.398-.2-2.355-1.162-2.72-1.294-.365-.132-.63-.2-.895.2-.266.398-1.03 1.294-1.262 1.56-.232.265-.464.298-.862.1-.398-.2-1.682-.62-3.203-1.978-1.184-1.056-1.983-2.36-2.215-2.758-.232-.398-.025-.613.174-.81.18-.178.398-.464.597-.696.2-.232.266-.398.398-.664.133-.265.067-.497-.033-.696-.1-.2-.895-2.16-1.228-2.957-.323-.775-.65-.67-.895-.682-.232-.012-.497-.015-.762-.015-.265 0-.696.1-1.06.497-.365.398-1.394 1.362-1.394 3.32 0 1.96 1.427 3.852 1.626 4.118.2.265 2.81 4.29 6.81 6.02.952.41 1.695.656 2.274.84.955.304 1.824.261 2.51.158.765-.114 2.355-.963 2.688-1.894.332-.93.332-1.727.232-1.893-.1-.166-.365-.265-.762-.464z" />
+        </svg>
+        <div style={{ display: 'flex', flexDirection: 'column', lineHeight: '1.3' }}>
+          <span style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.03em' }}>WhatsApp Enquiry</span>
+          <span style={{ fontSize: '9px', opacity: 0.9 }}>+91 99476 16989</span>
+        </div>
+      </a>
     </div>
   );
 }

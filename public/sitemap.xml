@@ -1,56 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+        http://www.google.com/schemas/sitemap-image/1.1
+        http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
 
-  <!-- Homepage -->
+  <!-- Homepage with Image SEO references -->
   <url>
     <loc>https://kadamakudy.vercel.app/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+
+    <image:image>
+      <image:loc>https://kadamakudy.vercel.app/images/kadamakudy-boating-backwater-tours.jpg</image:loc>
+      <image:title>Kadamakudy Boating Backwater Sunrise tours</image:title>
+      <image:caption>Scenic panorama of Kadamakudy backwaters with traditional country boats at sunrise</image:caption>
+      <image:geo_location>Kadamakudy, Kochi, Kerala, India</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://kadamakudy.vercel.app/images/kadamakudy-backwater-scenery-kochi.jpg</image:loc>
+      <image:title>Mirror reflection of Kadamakudy backwater scenery</image:title>
+      <image:caption>Lush green palm trees reflecting perfectly on the glassy surface of Kadamakudy backwaters in the morning</image:caption>
+      <image:geo_location>Kadamakudy, Kochi, Kerala, India</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://kadamakudy.vercel.app/images/kadamakudy-traditional-canoe-ride-sunrise.jpg</image:loc>
+      <image:title>Traditional Kadamakudy Sunrise canoe boat trip</image:title>
+      <image:caption>A traditional wooden country canoe cutting smoothly through the glowing orange waters of Kadamakudy during sunrise</image:caption>
+      <image:geo_location>Kadamakudy, Kochi, Kerala, India</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://kadamakudy.vercel.app/images/kadamakudy-shikhara-boat-cruise-kochi.jpg</image:loc>
+      <image:title>Traditional Shikhara cruise boat in Kochi backwaters</image:title>
+      <image:caption>Shaded traditional wooden Shikhara cruise boat gliding smoothly down a wide river canal in Ernakulam</image:caption>
+      <image:geo_location>Kadamakudy, Kochi, Kerala, India</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://kadamakudy.vercel.app/images/kadamakudy-mangrove-kayaking-kerala.jpg</image:loc>
+      <image:title>Mangrove forest canopy kayaking in Kadamakudy, Kochi</image:title>
+      <image:caption>Outdoor adventure enthusiasts paddling bright kayaks down a narrow mangrove channel surrounded by dense green foliage in Kadamakudy</image:caption>
+      <image:geo_location>Kadamakudy, Kochi, Kerala, India</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://kadamakudy.vercel.app/images/kadamakudy-open-water-kayaking-challenge.jpg</image:loc>
+      <image:title>Open lake island kayak challenge in Kadamakudy</image:title>
+      <image:caption>A single kayaker navigating open backwater lakes under an expansive sky near Ernakulam</image:caption>
+      <image:geo_location>Kadamakudy, Kochi, Kerala, India</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://kadamakudy.vercel.app/images/kadamakudy-authentic-homestay-property.jpg</image:loc>
+      <image:title>Authentic Kadamakudy backwater heritage homestay property</image:title>
+      <image:caption>A minimalist waterfront heritage homestay cottage situated directly on the edge of a calm Kadamakudy island canal</image:caption>
+      <image:geo_location>Kadamakudy, Kochi, Kerala, India</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://kadamakudy.vercel.app/images/og-main-kadamakudy-boating.jpg</image:loc>
+      <image:title>Kadamakudy Boating, Kayaking and Backwater Sightseeing Tours</image:title>
+      <image:caption>Tranquil view of country canoes resting on the calm morning backwaters of Kadamakudy Island, Kochi</image:caption>
+      <image:geo_location>Kadamakudy, Kochi, Kerala, India</image:geo_location>
+    </image:image>
   </url>
 
   <!-- Section anchors (deep-link SEO signals) -->
   <url>
-    <loc>https://kadamakudy.vercel.app/#journey</loc>
-    <lastmod>2026-06-03</lastmod>
+    <loc>https://kadamakudy.vercel.app/#boating-tours</loc>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://kadamakudy.vercel.app/#stories</loc>
-    <lastmod>2026-06-03</lastmod>
+    <loc>https://kadamakudy.vercel.app/#kayaking-tours</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://kadamakudy.vercel.app/#island-homestay</loc>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://kadamakudy.vercel.app/#places</loc>
-    <lastmod>2026-06-03</lastmod>
+    <loc>https://kadamakudy.vercel.app/#location-details</loc>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://kadamakudy.vercel.app/#experience</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://kadamakudy.vercel.app/#gallery</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://kadamakudy.vercel.app/#contact</loc>
-    <lastmod>2026-06-03</lastmod>
+    <loc>https://kadamakudy.vercel.app/#booking-form</loc>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
