@@ -205,7 +205,7 @@ function FAQSection() {
     },
     {
       q: "How do I enquire about a boat ride or sightseeing visit?",
-      a: "Simply WhatsApp or call +91 99476 16989 or +91 75106 16989. You can also use the contact form below or email hello@kadamakudy.com. We will share all details about timings, sightseeing spots, and what to expect."
+      a: "Simply WhatsApp or call +91 99476 16989 or +91 75106 16989. You can also use the contact form below or email kadamakudybackwaters@gmail.com. We will share all details about timings, sightseeing spots, and what to expect."
     }
   ];
 
@@ -1002,14 +1002,14 @@ export default function App() {
 
                 {/* Contact Channels */}
                 <address className="space-y-6 not-italic">
-                  <a href="mailto:hello@kadamakudy.com" className="flex items-center gap-4 group cursor-pointer no-underline">
+                  <a href="mailto:kadamakudybackwaters@gmail.com" className="flex items-center gap-4 group cursor-pointer no-underline">
                     <div className="w-10 h-10 rounded-full border border-[#C8A46D]/20 flex items-center justify-center group-hover:border-[#C8A46D] transition-all duration-300" aria-hidden="true">
                       <Mail className="w-4 h-4 text-[#C8A46D] group-hover:scale-110 transition-transform" />
                     </div>
                     <div>
                       <span className="font-sans text-[9px] tracking-[0.2em] text-[#F5F0E6]/50 uppercase block mb-0.5">Email</span>
                       <p className="font-sans text-[11px] text-[#F5F0E6] group-hover:text-[#C8A46D] transition-colors">
-                        hello@kadamakudy.com
+                        kadamakudybackwaters@gmail.com
                       </p>
                     </div>
                   </a>
