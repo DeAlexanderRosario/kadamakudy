@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { ArrowRight, Circle, Menu, X, Mail, Phone, MapPin, Send, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { trackEvent } from './utils/analytics';
 
 const NAV_LINKS = [
   { label: 'THE JOURNEY', href: '#journey' },
@@ -261,6 +262,8 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' });
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -268,12 +271,63 @@ export default function App() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Contact form:', contactForm);
-    setContactForm({ name: '', email: '', message: '' });
-    setFormSubmitted(true);
-    setTimeout(() => setFormSubmitted(false), 4000);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    // Track submission event in GA4
+    trackEvent('contact_form_submit', {
+      name: contactForm.name,
+      email: contactForm.email
+    });
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      console.warn("Web3Forms access key is not set. Submitting locally for demo.");
+      // Fallback local submission behavior for local testing
+      setTimeout(() => {
+        setContactForm({ name: '', email: '', message: '' });
+        setFormSubmitted(true);
+        setIsSubmitting(false);
+        setTimeout(() => setFormSubmitted(false), 5000);
+      }, 1000);
+      return;
+    }
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: contactForm.name,
+          email: contactForm.email,
+          message: contactForm.message,
+          subject: 'New Inquiry from Kadamakudy Website'
+        })
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setContactForm({ name: '', email: '', message: '' });
+        setFormSubmitted(true);
+        trackEvent('contact_form_success', { email: contactForm.email });
+        setTimeout(() => setFormSubmitted(false), 5000);
+      } else {
+        setSubmitError(result.message || 'Something went wrong. Please try again.');
+        trackEvent('contact_form_failure', { error: result.message });
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitError('Failed to send message. Please check your connection.');
+      trackEvent('contact_form_failure', { error: 'network_error' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -318,7 +372,10 @@ export default function App() {
               key={link.label}
               href={link.href}
               role="menuitem"
-              onClick={() => setMenuOpen(false)}
+              onClick={() => {
+                setMenuOpen(false);
+                trackEvent('navigate_section', { section: link.label });
+              }}
               className="nav-link font-sans text-[9px] tracking-[0.25em] text-[#F5F0E6]/60 hover:text-[#C8A46D] transition-colors duration-350 uppercase no-underline"
             >
               {link.label}
@@ -1002,7 +1059,11 @@ export default function App() {
 
                 {/* Contact Channels */}
                 <address className="space-y-6 not-italic">
-                  <a href="mailto:kadamakudybackwaters@gmail.com" className="flex items-center gap-4 group cursor-pointer no-underline">
+                  <a
+                    href="mailto:kadamakudybackwaters@gmail.com"
+                    onClick={() => trackEvent('email_click', { address: 'kadamakudybackwaters@gmail.com' })}
+                    className="flex items-center gap-4 group cursor-pointer no-underline"
+                  >
                     <div className="w-10 h-10 rounded-full border border-[#C8A46D]/20 flex items-center justify-center group-hover:border-[#C8A46D] transition-all duration-300" aria-hidden="true">
                       <Mail className="w-4 h-4 text-[#C8A46D] group-hover:scale-110 transition-transform" />
                     </div>
@@ -1014,7 +1075,11 @@ export default function App() {
                     </div>
                   </a>
 
-                  <a href="tel:+919947616989" className="flex items-center gap-4 group cursor-pointer no-underline">
+                  <a
+                    href="tel:+919947616989"
+                    onClick={() => trackEvent('call_click', { number: '+919947616989', label: 'Primary' })}
+                    className="flex items-center gap-4 group cursor-pointer no-underline"
+                  >
                     <div className="w-10 h-10 rounded-full border border-[#C8A46D]/20 flex items-center justify-center group-hover:border-[#C8A46D] transition-all duration-300" aria-hidden="true">
                       <Phone className="w-4 h-4 text-[#C8A46D] group-hover:scale-110 transition-transform" />
                     </div>
@@ -1026,7 +1091,11 @@ export default function App() {
                     </div>
                   </a>
 
-                  <a href="tel:+917510616989" className="flex items-center gap-4 group cursor-pointer no-underline">
+                  <a
+                    href="tel:+917510616989"
+                    onClick={() => trackEvent('call_click', { number: '+917510616989', label: 'Alternate' })}
+                    className="flex items-center gap-4 group cursor-pointer no-underline"
+                  >
                     <div className="w-10 h-10 rounded-full border border-[#C8A46D]/20 flex items-center justify-center group-hover:border-[#C8A46D] transition-all duration-300" aria-hidden="true">
                       <Phone className="w-4 h-4 text-[#C8A46D] group-hover:scale-110 transition-transform" />
                     </div>
@@ -1081,6 +1150,12 @@ export default function App() {
                   {formSubmitted && (
                     <div role="alert" className="mb-6 bg-[#C8A46D]/10 border border-[#C8A46D]/30 rounded p-4">
                       <p className="font-sans text-[11px] text-[#C8A46D]">Thank you — your inquiry has been received. We'll respond within 48–72 hours.</p>
+                    </div>
+                  )}
+
+                  {submitError && (
+                    <div role="alert" className="mb-6 bg-red-900/20 border border-red-900/50 rounded p-4">
+                      <p className="font-sans text-[11px] text-red-400">{submitError}</p>
                     </div>
                   )}
 
@@ -1158,10 +1233,11 @@ export default function App() {
 
                     <button
                       type="submit"
-                      className="w-full bg-[#C8A46D] hover:bg-[#B98D52] text-[#0F2A2A] py-4 px-6 font-sans text-[10px] tracking-[0.25em] uppercase font-semibold transition-all duration-300 flex items-center justify-center gap-2.5 shadow-md active:scale-[0.98]"
+                      disabled={isSubmitting}
+                      className="w-full bg-[#C8A46D] hover:bg-[#B98D52] text-[#0F2A2A] py-4 px-6 font-sans text-[10px] tracking-[0.25em] uppercase font-semibold transition-all duration-300 flex items-center justify-center gap-2.5 shadow-md active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <Send className="w-3.5 h-3.5" aria-hidden="true" />
-                      Send Message
+                      {isSubmitting ? 'Sending...' : 'Send Message'}
                     </button>
                   </form>
                 </div>
@@ -1305,6 +1381,7 @@ export default function App() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Kadamakudy on Instagram"
+                  onClick={() => trackEvent('social_click', { platform: 'instagram' })}
                   className="w-7 h-7 rounded-full border border-[#C8A46D]/30 flex items-center justify-center hover:border-[#C8A46D] transition-colors"
                 >
                   <Instagram className="w-3 h-3 text-[#C8A46D]" aria-hidden="true" />
@@ -1314,6 +1391,7 @@ export default function App() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Kadamakudy on Facebook"
+                  onClick={() => trackEvent('social_click', { platform: 'facebook' })}
                   className="w-7 h-7 rounded-full border border-[#C8A46D]/30 flex items-center justify-center hover:border-[#C8A46D] transition-colors"
                 >
                   <Facebook className="w-3 h-3 text-[#C8A46D]" aria-hidden="true" />
@@ -1323,6 +1401,7 @@ export default function App() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Kadamakudy on LinkedIn"
+                  onClick={() => trackEvent('social_click', { platform: 'linkedin' })}
                   className="w-7 h-7 rounded-full border border-[#C8A46D]/30 flex items-center justify-center hover:border-[#C8A46D] transition-colors"
                 >
                   <Linkedin className="w-3 h-3 text-[#C8A46D]" aria-hidden="true" />
@@ -1359,6 +1438,7 @@ export default function App() {
         rel="noopener noreferrer"
         aria-label="WhatsApp Enquiry — Kadamakudy Boating & Sightseeing"
         title="Enquire on WhatsApp"
+        onClick={() => trackEvent('whatsapp_click', { position: 'floating' })}
         style={{
           position: 'fixed',
           bottom: '24px',
